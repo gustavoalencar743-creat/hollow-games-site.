@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hollow Games | Sua Página de Cultura Geek</title>
+</head> 
+
+<style>
+    download-btn {
+       display: flex;
+    justify-content: center; /* Alinha horizontalmente ao centro */
+    align-items: center;     /* Alinha verticalmente ao centro */
+    height: 100px;
+    }
+    a.download-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.3s;
+    
+}
+
+/* Efeito ao passar o mouse */
+a.download-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Efeito ao clicar */
+a.download-btn:active {
+    transform: scale(0.97);
+}
+    /* Estilo Geral do Corpo (Caverna/Vazio) */
+    body {
+        background-color: #1a1a1a; /* Preto muito escuro, quase de caverna */
+        color: #f0f0f0; /* Texto cinza claro, para contrastar */
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+    
+    /* Cabeçalho (Destaque principal) */
+    header {
+        padding: 20px 0;
+        background-color: #333333; /* Fundo cinza escuro */
+        border-bottom: 3px solid #b30000; /* Linha de destaque VERMELHA (referência Hornet) */
+        color: white;
+        background-image: url(banner.png);
+    }
+
+    /* Títulos Principais (Mais brilho) */
+    h1 {
+        text-align: center;
+        /* Adiciona uma sombra para um efeito de brilho suave */
+        text-shadow: 0 0 5px #ff4d4d; 
+    }
+
+    /* Subtítulos */
+    h2, h3 {
+        color: #ff4d4d; /* Cor Vermelha de destaque */
+    }
+
+    /* Conteúdo Principal */
+    main { /* Usei a tag <main> no body para semântica */
+        padding: 20px;
+    }
+    
+    /* Menu de Navegação */
+    .menu-categorias {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+        margin: 15px 0;
+        background-color: #2b2b2b; /* Fundo levemente mais claro que o body */
+        padding: 10px 0;
+        border-top: 1px solid #444;
+    }
+    .menu-categorias li { 
+        display: inline;
+        padding-right: 25px;
+    }
+    .menu-categorias li a {
+        color: #f0f0f0; 
+        text-decoration: none; 
+        transition: color 0.3s;
+    }
+    .menu-categorias li a:hover {
+        color: #b30000; /* Cor Vermelha ao passar o mouse */
+    }
+
+    /* Seção do Vídeo (Elemento de destaque) */
+    .video-section {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #2b2b2b; /* Fundo levemente mais claro */
+        border: 2px solid #b30000; /* Borda VERMELHA para destacar */
+        border-radius: 8px; 
+        box-shadow: 0 0 15px rgba(179, 0, 0, 0.5); /* Sombra avermelhada */
+    }
+
+    /* Estilo para o botão de JS */
+    button {
+        background-color: #b30000; /* Vermelho forte */
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-left: 10px;
+    }
+    button:hover {
+        background-color: #ff4d4d; /* Vermelho mais claro ao passar o mouse */
+    }
+
+    /* Rodapé */
+    footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #000000; /* Preto total */
+        color: #888888; 
+        margin-top: 40px;
+        border-top: 2px solid #b30000;
+    }
+
+    /* --- RESPONSIVIDADE DO VÍDEO --- */
+    .video-responsive {
+        position: relative;
+        padding-bottom: 56.25%; /* Proporção 16:9 */
+        height: 0;
+        overflow: hidden;
+    }
+    .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<script>
+    // Correção: a variável 'valorDigitado' deve ser acessível globalmente se for usada no console e no DOM
+    let valorDigitado = ""; 
+
+    function processarinput(){
+        const inputElemento = document.getElementById('meu-input');
+
+        // Captura o valor
+        valorDigitado = inputElemento.value;
+
+        // Exibe no console
+        console.log("Valor armazenado na variável 'valorDigitado':", valorDigitado);
+
+        // Exibe na página no elemento com id 'exibicao'
+        document.getElementById('exibicao').textContent = "Você digitou: " + valorDigitado;
+    }
+</script>
+
+<body>
+<header class="BANNER">
+    <h1 style="text-align: center;">BEM VINDOS AO HOLLOW GAMES</h1>
+</header>
+
+<main>
+    <h2>Aqui venderemos produtos de cultura</h2>
+    
+    <nav>
+        <ul class="menu-categorias">
+            <li><a href="#">geek</a></li>
+            <li><a href="#">games</a></li>
+            <li><a href="Formulario.html">Cadastre-se</a></li>
+        </ul>
+    </nav>
+    
+    <section class="video-section">
+        <h3>Vídeo em Destaque: Trailer do silksong!</h3>
+        <p>Veja o maior metroidvania do mundo </p>
+        <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/6XGeJwsUP9c?si=NYZSNKABTnxYiJHM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section style="margin-top: 30px; padding: 15px; border: 1px solid #444;">
+        <h4>Teste de Captura de Input (JS)</h4>
+        <input type="text" id="meu-input" placeholder="Digite algo aqui...">
+        <button onclick="processarinput()">Capturar e Exibir</button>
+
+        <p id="exibicao" style="margin-top: 15px; color: #ff9999;">Aguardando seu input...</p>
+    </section>
+    
+</main>
+<div class="link"> 
+<a href="Chaotic - Regras simplificadas pt-br.pdf" donwload class="download-btn">
+    Chaotic - Regras simplificadas pt-br.pdf
+</a>
+</div>
+<footer>
+    <p>&copy; 2025 Hollow Games. Todos os direitos reservados.</p>
+</footer>
+ 
+</body> 
+</html>
